@@ -78,7 +78,6 @@ Then, open `http://localhost:3000` in your browser to view the app.
 | Muhammad Abdul Rehman | Full Stack Developer |
 | Haris Khan | Full Stack Developer |
 | Talah Idrees | Full Stack Developer |
-| Waleed Haroon | Full Stack Developer |
 
 ---
 
@@ -86,7 +85,7 @@ Then, open `http://localhost:3000` in your browser to view the app.
 
 For any queries or contributions, feel free to reach out:
 
-- 📧 **Email**: [contact@example.com](mailto:contact@example.com)
+- 📧 **Email**: [contact@example.com](mailto:saadadil2264326@gmail.com)
 - 🐞 **GitHub Issues**: Open an issue for bug reports or feature requests.
 
 📢 This project showcases **full-stack web development** with **React.js, Node.js, MongoDB, and RESTful APIs** in a practical business solution.
