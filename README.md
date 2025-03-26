@@ -1,7 +1,7 @@
 # 🛒 Bill & Inventory Management System
 
 ##Click on main to go to master branch to see project files
-## 📝 Overview
+## 📝  Overview
 
 The **Bill & Inventory Management System** is a web-based platform designed to streamline billing and inventory operations for marts, restaurants, and similar businesses. It enhances efficiency, accuracy, and automation in tracking inventory and processing bills in real time.
 
