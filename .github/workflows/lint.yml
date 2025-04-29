@@ -1,0 +1,11 @@
+name: Lint Code
+on:
+  pull_request:
+    branches: [main, develop]
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run ESLint
+        run: npm run lint
