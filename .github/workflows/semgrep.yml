@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [main]
   schedule:
-    - cron: '0 3 * * 0'  # Every Sunday at 3 AM UTC
+    - cron: '0 3 * * 0'
 
 jobs:
   semgrep:
@@ -23,8 +23,9 @@ jobs:
 
       - name: Setup Semgrep
         uses: returntocorp/semgrep-action@v1
+        env:
+          SEMGREP_APP_TOKEN: ${{ secrets.SEMGREP_APP_TOKEN }}
         with:
-          publishToken: ${{ secrets.SEMGREP_APP_TOKEN }}
           config: >-
             p/default
             p/react
@@ -32,11 +33,15 @@ jobs:
             p/typescript-security
             p/jwt
           generateSarif: true
-          outputFile: semgrep.sarif
+          outputFile: results.sarif
+
+      - name: List files
+        run: ls -la
 
       - name: Upload SARIF file
-        if: always()  # Run this step even if Semgrep finds issues
+        if: always()
         uses: github/codeql-action/upload-sarif@v3
         with:
-          sarif_file: semgrep.sarif
-          wait-for-processing: true  # Wait for SARIF to be processed
+          sarif_file: results.sarif
+          wait-for-processing: true
+          category: semgrep-results
