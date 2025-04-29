@@ -2,7 +2,7 @@ name: Semgrep Code Scan
 
 on:
   push:
-    branches: [main,hackops]
+    branches: [main]
   pull_request:
     branches: [main]
   schedule:
@@ -32,8 +32,11 @@ jobs:
             p/typescript-security
             p/jwt
           generateSarif: true
+          outputFile: semgrep.sarif
 
-      - name: Upload SARIF file to GitHub Security tab
+      - name: Upload SARIF file
+        if: always()  # Run this step even if Semgrep finds issues
         uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: semgrep.sarif
+          wait-for-processing: true  # Wait for SARIF to be processed
